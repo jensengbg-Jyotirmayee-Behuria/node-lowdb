@@ -8,12 +8,10 @@ shoppingcartDb=low(cartAdapter)
 
 // Set defaults - required if JSON file is empty
 productDb.defaults({  products: [] }).write();
+
+shoppingcartDb.get('shoppingCarts').remove().write();
 shoppingcartDb.defaults({  shoppingCarts: [] }).write();
-loadProducts()
 
 module.exports = productDb;
 module.exports=shoppingcartDb;
-async function loadProducts()
-{
-    
-}
+ 
