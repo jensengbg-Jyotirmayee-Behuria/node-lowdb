@@ -1,18 +1,32 @@
 {
   "products": [
     {
-      "product": {
-        "id": 1,
-        "name": "first product",
-        "image": ""
-      }
+      "id": 1,
+      "name": "Winter Collection",
+      "Type": "Garment",
+      "price": "SEK 200",
+      "image": "/images/scrap.jfif"
     },
     {
-      "product": {
-        "id": 1,
-        "name": "2nd product",
-        "image": ""
-      }
+      "id": 2,
+      "name": "Lady Jeans",
+      "price": "SEK 266",
+      "Type": "Garment",
+      "image": "/images/cloth1.jfif"
+    },
+    {
+      "id": 3,
+      "name": "Mobile",
+      "price": "SEK 1006",
+      "Type": "Electronic",
+      "image": "http://localhost:8000/product/images/mobile.jfif"
+    },
+    {
+      "id": 4,
+      "name": "Computer",
+      "price": "SEK 2669",
+      "Type": "Electronic",
+      "image": "/images/computer.jfif"
     }
   ]
 }
