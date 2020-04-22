@@ -34,11 +34,7 @@ function isAlreadyInCart(productId) {
 
 function removeFromShoppingCart(productId) 
 {
-    var findResult= shoppingcartDb.get('shoppingCarts')
-          .find({ productid:productId })
-          .value() 
-
-     let result=shoppingcartDb.get('shoppingCarts')
+      let result=shoppingcartDb.get('shoppingCarts')
           .remove({ productid:productId })
           .write()      
 };
