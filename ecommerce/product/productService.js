@@ -1,29 +1,23 @@
 const db = require("../database")
- 
+
+// Get all products from Database
 function getAllPrducts() {
-    console.log("get request")
+    
     return productDb.get('products').value();
 };
-
+//Check if the product is exists?
 function ifProductExists(productId) {
-
-    console.log("Product Id " + productId);
-
+     
     let result=productDb.get('products')
         .find({ id:productId })
-        .value()   
-
-    console.log(result);
-
+        .value()       
     if(typeof(result)=='undefined' || result==null) 
     {
-        console.log("means product is not found..so return false")
         return false;
     }
     else
     {
-        console.log("means product is exists..sending true");
-        return true;
+       return true;
     }
 
 };
