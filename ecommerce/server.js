@@ -1,6 +1,6 @@
 // Endpoint's for the following:
 //  http://localhost:8000/api/products   GET Download all products
-//  http://localhost:8000/api/shoppingcart/add  POST Be able to add products to a shopping cart.
+//  http://localhost:8000/api/shoppingcart/add  POST Be able to add products to a shopping cart. pass param in query.
 //  http://localhost:8000/api/shoppingcart/remove/prodid  DELETE remove product from carts
 //  http://localhost:8000/api/shoppingcarts/  GET .get all shopping cart
  
