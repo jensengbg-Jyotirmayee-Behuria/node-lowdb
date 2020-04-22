@@ -8,7 +8,7 @@ shoppingcartDb=low(cartAdapter)
 
 // Set defaults - required if JSON file is empty
 productDb.defaults({  products: [] }).write();
-
+//All the previous cart must be rfreshed because shopping cart is based on a user session ? or
 shoppingcartDb.get('shoppingCarts').remove().write();
 shoppingcartDb.defaults({  shoppingCarts: [] }).write();
 
