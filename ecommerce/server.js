@@ -1,6 +1,6 @@
 // Endpoint's for the following:
 //  http://localhost:8000/api/products   GET Download all products
-//  http://localhost:8000/api/shoppingcart/add  POST Be able to add products to a shopping cart. pass param in query.
+//  http://localhost:8000/api/shoppingcart/add  POST Be able to add products to a shopping cart.
 //  http://localhost:8000/api/shoppingcart/remove/prodid  DELETE remove product from carts
 //  http://localhost:8000/api/shoppingcarts/  GET .get all shopping cart
  
@@ -8,18 +8,30 @@ const db = require("./database")
 //Get product and cart services
 const productService = require('./product/productService');
 const shoppingCartService = require('./shoppingcart/shoppingCartService');
- 
 const express = require('express');
 const app = express(); 
  
+app.use(express.static('public'));
 //Req 1 - Get all Products from Database
 app.get('/api/products/', (req, res) => {        
            
        res.send(JSON.stringify(productService.getAllPrducts()));       
 })
+
+//This API needed from client to refresh the carts 
+app.delete('/api/shoppingcart/removeall/', (req, res,next) => {   
+            
+        shoppingCartService.removeFromShoppingCart()
+        res.send("All carts removed");
+        next()
+    
+})
+
 //Req.Be able to remove products in the shopping cart.
 app.delete('/api/shoppingcart/remove/:prodid', (req, res,next) => {   
     //If product id exists in cart then only allow remove
+    console.log("Product Id to remove" + req.params.prodid);
+
     if(shoppingCartService.isAlreadyInCart(parseInt(req.params.prodid)))   
     {        
         shoppingCartService.removeFromShoppingCart(parseInt(req.params.prodid))
@@ -35,8 +47,9 @@ app.delete('/api/shoppingcart/remove/:prodid', (req, res,next) => {
 //Req-2 Be able to add products to a shopping cart.
 app.post('/api/shoppingcart/add/', (req, res,next) => {        
     let userId=req.query.userId  //this can be sessionid or any userid
-    let prodId= parseInt(req.query.prodid);
-    let price=req.query.price        
+    let prodId= parseInt(req.query.pid);
+    let price=req.query.price
+    let prodname=req.query.pname        
 
     //You should receive an error message if you try to add a product that does not exist.
     if(productService.ifProductExists(prodId))
@@ -50,7 +63,7 @@ app.post('/api/shoppingcart/add/', (req, res,next) => {
         else
         {
             //Be able to add products to a shopping cart
-            shoppingCartService.addToShoppingCart(userId,prodId,price);
+            shoppingCartService.addToShoppingCart(userId,prodId,prodname,price);
             res.send({message: 'Add to shopping cart is success'});           
             next()     
         }
