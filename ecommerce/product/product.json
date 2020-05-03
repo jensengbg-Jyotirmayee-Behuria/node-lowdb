@@ -4,29 +4,43 @@
       "id": 1,
       "name": "Winter Collection",
       "Type": "Garment",
-      "price": "SEK 200",
-      "image": "/images/scrap.jfif"
+      "price": "200",
+      "image": "https://placeimg.com/200/120/people"
     },
     {
       "id": 2,
       "name": "Lady Jeans",
-      "price": "SEK 266",
+      "price": "266",
       "Type": "Garment",
-      "image": "/images/cloth1.jfif"
+      "image": "https://placeimg.com/200/120/people/sepia"
     },
     {
       "id": 3,
       "name": "Mobile",
-      "price": "SEK 1006",
+      "price": "1006",
       "Type": "Electronic",
-      "image": "http://localhost:8000/product/images/mobile.jfif"
+      "image": "https://placeimg.com/200/120/tech"
     },
     {
       "id": 4,
       "name": "Computer",
-      "price": "SEK 2669",
+      "price": "2669",
       "Type": "Electronic",
-      "image": "/images/computer.jfif"
+      "image": "https://placeimg.com/200/120/tech/sepia"
+    },
+    {
+      "id": 5,
+      "name": "Grinder",
+      "price": "2769",
+      "Type": "Electronic",
+      "image": "https://placeimg.com/200/120/tech/sepia"
+    },
+    {
+      "id": 6,
+      "name": "Phone",
+      "price": "SEK 2009",
+      "Type": "Electronic",
+      "image": "https://placeimg.com/200/120/tech/grayscale"
     }
   ]
 }
